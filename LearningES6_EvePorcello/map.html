@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>const keyword</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        var course = new Map();
+        course.set('react', {description: 'ui'});
+        course.set('jest', {description: 'testing'});
+
+        console.log(course);
+        console.log(course.react); //undefined
+        console.log(course.get('react'));
+
+        var todayIStudied = new Map([
+            [new Date(), 'today'],
+            ['lessons', ['let', 'const', 'map']]
+        ]);
+
+        console.log(todayIStudied.size); //2
+
+        todayIStudied.forEach(function(lesson){
+            console.log(lesson);
+        });
+    </script>
+</head>
+<body>    
+</body>
+</html>
