@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>const keyword</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        function createEmail(firstName, purchasePrice){
+            var shippingFee = 5.95;
+            console.log(
+                `Hi ${firstName}, Thanks for buying from us!
+                    Total: $${purchasePrice}
+                    Shipping: $${shippingFee}
+                    Grand Total: $${purchasePrice + shippingFee}
+                `
+            );
+        }
+        createEmail("Hyunju", 100);
+    </script>
+</head>
+<body>    
+</body>
+</html>
