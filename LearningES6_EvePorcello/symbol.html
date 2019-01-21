@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Symbols</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script type="text/babel">
+        const id = Symbol();
+        const courseInfo = {
+            title: "ES6",
+            topics: ["babel", "syntax", "functions", "classes"],
+            id: "js-course"
+        };
+        courseInfo[id] = 41284;
+        console.log(courseInfo);
+        console.log(courseInfo[id]);
+    </script>
+</head>
+<body>    
+</body>
+</html>
