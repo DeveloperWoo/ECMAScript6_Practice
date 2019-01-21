@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser-polyfill.js"></script>
+    <script type="text/babel">
+        function* director(){
+            yield "Three";
+            yield "Two";
+            yield "One";
+            yield "Action";
+        }
+
+        var action = director();
+
+        console.log(action.next().value); //Three
+        console.log(action.next().value); //Two
+        console.log(action.next().value); //One
+        console.log(action.next().value); //Action
+        console.log(action.next().value); //undefined
+
+        function* eachItem(arr){
+            for(var i = 0; i < arr.length; i++){
+                yield arr[i];
+            }
+        }
+
+        var letters = eachItem(["a", "b", "c", "d", "e", "f", "g"]);
+        var abcs = setInterval(function(){
+            var letter = letters.next();
+            if(letter.done){
+                clearInterval(abcs);
+                console.log("Now I know my ABC's");
+            }else{
+                console.log(letter.value);
+            }
+        },500);
+    </script>
+</head>
+<body>    
+</body>
+</html>
